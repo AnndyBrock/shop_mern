@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import {listUser, deleteUser} from '../actions/userActions'
 
 
-const MyComponent = ({history}) => {
+const UserListScreen = ({history}) => {
 
     const dispatch = useDispatch();
 
@@ -58,7 +58,7 @@ const MyComponent = ({history}) => {
                                 <td>{user.isAdmin ? (<i className='fas fa-check' style={{color:'green'}}/> ): <i className='fas fa-times' style={{color:'red'}}/> }</td>
                                 {
                                     userInfo._id!==user._id ? (<td>
-                                        <LinkContainer to={`/user/${user._id}/edit`}>
+                                        <LinkContainer to={`/admin/user/${user._id}/edit`}>
                                             <Button variant='light' className='btn-sm'>
                                                 <i className='fas fa-edit'/>
                                             </Button>
@@ -81,4 +81,7 @@ const MyComponent = ({history}) => {
     );
 };
 
-export default MyComponent;
+export default UserListScreen;
+
+
+
